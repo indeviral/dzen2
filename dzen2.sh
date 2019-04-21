@@ -1,12 +1,12 @@
 #!/bin/bash
 cd $(cd $(dirname $0) && pwd)
 source ./dzen2.conf
-_usb(){
-usb=$(ls /dev/* | grep "sd[c-z]\|mmc")
-if [[ -n $usb ]]; then 
-  echo "$fg3^ca(1,./${prefix}usb.sh) usb ^ca()"
-fi
-}
+#_usb(){
+#usb=$(ls /dev/* | grep "sd[c-z]\|mmc")
+#if [[ -n $usb ]]; then 
+#  echo "$fg3^ca(1,./${prefix}usb.sh) usb ^ca()"
+#fi
+#}
 _mus(){
 if [[ -n `mpc | grep playing` ]];then
   export MPD_HOST="$HOME/.mpd/mpd.socket"
@@ -79,6 +79,6 @@ else
 fi
 }
 while true; do
-  echo "$(_usb)$(_mus)$(_net)$(_bri)$(_vol)$(_bat)$(_date)$(_lang)"
+  echo "$(_mus)$(_net)$(_bri)$(_vol)$(_bat)$(_date)$(_lang)"
   sleep 1
 done | dzen2 -ta r -w 800 -x -800 -y 0 -h 24 -fn "$font" -e "$exp1"
