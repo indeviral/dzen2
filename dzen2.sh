@@ -1,5 +1,5 @@
 #!/bin/bash
-dd
+d
 cd $(cd $(dirname $0) && pwd)
 source ./dzen2.conf
 #_usb(){
