@@ -1,6 +1,3 @@
-
-
-2
 #!/bin/bash
 cd $(cd $(dirname $0) && pwd)
 source ./dzen2.conf
